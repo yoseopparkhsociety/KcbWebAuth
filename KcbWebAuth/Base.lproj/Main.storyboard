@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="HaQ-Ag-6eJ">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CustomWebView" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DJq-nO-Ynp">
+                                <rect key="frame" x="0.0" y="138" width="414" height="70"/>
+                                <color key="backgroundColor" red="1" green="0.78107219930000005" blue="0.01062852517" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="7M4-9u-ayy"/>
+                                </constraints>
+                                <state key="normal" title="다이렉트 본인인증"/>
+                                <connections>
+                                    <action selector="modalAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Nff-Ag-afE"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b6H-8Y-KPf">
+                                <rect key="frame" x="0.0" y="228" width="414" height="70"/>
+                                <color key="backgroundColor" red="1" green="0.78107219930000005" blue="0.01062852517" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="Czh-Qv-JVi"/>
+                                </constraints>
+                                <state key="normal" title="가이드 &gt; 본인인증 이동"/>
+                                <connections>
+                                    <action selector="pushActionWithGuide:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dGe-ee-udQ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="b6H-8Y-KPf" firstAttribute="top" secondItem="DJq-nO-Ynp" secondAttribute="bottom" constant="20" id="Azp-iV-2z3"/>
+                            <constraint firstItem="DJq-nO-Ynp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="I7f-0D-aRx"/>
+                            <constraint firstItem="b6H-8Y-KPf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Pa5-Rz-GML"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="DJq-nO-Ynp" secondAttribute="trailing" id="Srl-FX-DHr"/>
+                            <constraint firstItem="b6H-8Y-KPf" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="kGU-D2-Jy3"/>
+                            <constraint firstItem="DJq-nO-Ynp" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="sta-B5-Y4d"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="h0O-XR-RUm"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="767" y="139"/>
+        </scene>
+        <!--본인인증-->
+        <scene sceneID="hUf-Or-5gg">
+            <objects>
+                <viewController storyboardIdentifier="GuideViewController" title="본인인증" id="OtV-yd-JUs" customClass="GuideViewController" customModule="CustomWebView" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7IA-dp-eGT">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XjS-Kg-MJU">
+                                <rect key="frame" x="0.0" y="792" width="414" height="70"/>
+                                <color key="backgroundColor" red="1" green="0.78107219930000005" blue="0.01062852517" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="mH1-dX-0Fo"/>
+                                </constraints>
+                                <state key="normal" title="본인인증하기"/>
+                                <connections>
+                                    <action selector="pushAction:" destination="OtV-yd-JUs" eventType="touchUpInside" id="7PH-v4-lv4"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QZi-gJ-tgu">
+                                <rect key="frame" x="20" y="188" width="374" height="251"/>
+                                <string key="text">반가워요 :D  루트는 안전하고 믿을 수 있는  소개팅을 제공하고자  KCB 본인인증 절차를 진행합니다.
+
+단 한 명의 알 바 회원(허위 계정)도  존재하지 않도록 정확한 정보로  본인인증을 완료하신 후  나와 스친 인연을 소개받아보세요!</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="XjS-Kg-MJU" firstAttribute="leading" secondItem="2vq-5F-pdH" secondAttribute="leading" id="1YS-Hz-woo"/>
+                            <constraint firstItem="QZi-gJ-tgu" firstAttribute="top" secondItem="2vq-5F-pdH" secondAttribute="top" constant="100" id="3nk-Id-YmL"/>
+                            <constraint firstItem="2vq-5F-pdH" firstAttribute="bottom" secondItem="XjS-Kg-MJU" secondAttribute="bottom" id="9ck-uY-5B3"/>
+                            <constraint firstItem="QZi-gJ-tgu" firstAttribute="leading" secondItem="2vq-5F-pdH" secondAttribute="leading" constant="20" id="Gnt-pK-QgN"/>
+                            <constraint firstItem="2vq-5F-pdH" firstAttribute="trailing" secondItem="XjS-Kg-MJU" secondAttribute="trailing" id="S0z-Lc-77p"/>
+                            <constraint firstItem="2vq-5F-pdH" firstAttribute="trailing" secondItem="QZi-gJ-tgu" secondAttribute="trailing" constant="20" id="eH5-k4-e4m"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="2vq-5F-pdH"/>
+                    </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="w4W-mF-eSn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="118" y="816"/>
+        </scene>
+        <!--본인인증-->
+        <scene sceneID="snU-ve-iTz">
+            <objects>
+                <viewController storyboardIdentifier="AuthViewController" title="본인인증" id="eZt-Oe-UZm" customClass="AuthViewController" customModule="CustomWebView" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7gc-op-jXQ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="gj1-0P-dQ2"/>
+                    </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6yN-JX-R32" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="767" y="812"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="j3e-O0-qMR">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="HaQ-Ag-6eJ" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="pwk-Lp-0tS">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="ROE-4M-v7p"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vg0-Ob-RQa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="138.61607142857142"/>
+        </scene>
+    </scenes>
+</document>

@@ -7,21 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FE2AE9DA23334D57001FD864 /* GuideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2AE9D923334D57001FD864 /* GuideViewController.swift */; };
 		FEA60743232F5FAF00F2E131 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA60742232F5FAF00F2E131 /* AppDelegate.swift */; };
 		FEA60745232F5FAF00F2E131 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA60744232F5FAF00F2E131 /* ViewController.swift */; };
 		FEA60748232F5FAF00F2E131 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEA60746232F5FAF00F2E131 /* Main.storyboard */; };
 		FEA6074A232F5FB000F2E131 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FEA60749232F5FB000F2E131 /* Assets.xcassets */; };
 		FEA6074D232F5FB000F2E131 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEA6074B232F5FB000F2E131 /* LaunchScreen.storyboard */; };
+		FEA60755232F602E00F2E131 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA60754232F602E00F2E131 /* AuthViewController.swift */; };
+		FEA60758232F7E5400F2E131 /* WKWebViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA60756232F7E5400F2E131 /* WKWebViewViewController.swift */; };
+		FEA60759232F7E5400F2E131 /* WKWebViewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FEA60757232F7E5400F2E131 /* WKWebViewViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		FEA6073F232F5FAF00F2E131 /* CustomWebView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CustomWebView.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FE2AE9D923334D57001FD864 /* GuideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideViewController.swift; sourceTree = "<group>"; };
+		FEA6073F232F5FAF00F2E131 /* KcbWebAuth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KcbWebAuth.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEA60742232F5FAF00F2E131 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FEA60744232F5FAF00F2E131 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		FEA60747232F5FAF00F2E131 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FEA60749232F5FB000F2E131 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FEA6074C232F5FB000F2E131 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FEA6074E232F5FB000F2E131 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FEA60754232F602E00F2E131 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
+		FEA60756232F7E5400F2E131 /* WKWebViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WKWebViewViewController.swift; sourceTree = "<group>"; };
+		FEA60757232F7E5400F2E131 /* WKWebViewViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WKWebViewViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,7 +46,7 @@
 		FEA60736232F5FAE00F2E131 = {
 			isa = PBXGroup;
 			children = (
-				FEA60741232F5FAF00F2E131 /* CustomWebView */,
+				FEA60741232F5FAF00F2E131 /* KcbWebAuth */,
 				FEA60740232F5FAF00F2E131 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -46,30 +54,34 @@
 		FEA60740232F5FAF00F2E131 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				FEA6073F232F5FAF00F2E131 /* CustomWebView.app */,
+				FEA6073F232F5FAF00F2E131 /* KcbWebAuth.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		FEA60741232F5FAF00F2E131 /* CustomWebView */ = {
+		FEA60741232F5FAF00F2E131 /* KcbWebAuth */ = {
 			isa = PBXGroup;
 			children = (
+				FEA60746232F5FAF00F2E131 /* Main.storyboard */,
 				FEA60742232F5FAF00F2E131 /* AppDelegate.swift */,
 				FEA60744232F5FAF00F2E131 /* ViewController.swift */,
-				FEA60746232F5FAF00F2E131 /* Main.storyboard */,
+				FE2AE9D923334D57001FD864 /* GuideViewController.swift */,
+				FEA60754232F602E00F2E131 /* AuthViewController.swift */,
+				FEA60756232F7E5400F2E131 /* WKWebViewViewController.swift */,
+				FEA60757232F7E5400F2E131 /* WKWebViewViewController.xib */,
 				FEA60749232F5FB000F2E131 /* Assets.xcassets */,
 				FEA6074B232F5FB000F2E131 /* LaunchScreen.storyboard */,
 				FEA6074E232F5FB000F2E131 /* Info.plist */,
 			);
-			path = CustomWebView;
+			path = KcbWebAuth;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		FEA6073E232F5FAF00F2E131 /* CustomWebView */ = {
+		FEA6073E232F5FAF00F2E131 /* KcbWebAuth */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = FEA60751232F5FB000F2E131 /* Build configuration list for PBXNativeTarget "CustomWebView" */;
+			buildConfigurationList = FEA60751232F5FB000F2E131 /* Build configuration list for PBXNativeTarget "KcbWebAuth" */;
 			buildPhases = (
 				FEA6073B232F5FAF00F2E131 /* Sources */,
 				FEA6073C232F5FAF00F2E131 /* Frameworks */,
@@ -79,9 +91,9 @@
 			);
 			dependencies = (
 			);
-			name = CustomWebView;
+			name = KcbWebAuth;
 			productName = CustomWebView;
-			productReference = FEA6073F232F5FAF00F2E131 /* CustomWebView.app */;
+			productReference = FEA6073F232F5FAF00F2E131 /* KcbWebAuth.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -99,7 +111,7 @@
 					};
 				};
 			};
-			buildConfigurationList = FEA6073A232F5FAF00F2E131 /* Build configuration list for PBXProject "CustomWebView" */;
+			buildConfigurationList = FEA6073A232F5FAF00F2E131 /* Build configuration list for PBXProject "KcbWebAuth" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -112,7 +124,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				FEA6073E232F5FAF00F2E131 /* CustomWebView */,
+				FEA6073E232F5FAF00F2E131 /* KcbWebAuth */,
 			);
 		};
 /* End PBXProject section */
@@ -124,6 +136,7 @@
 			files = (
 				FEA6074D232F5FB000F2E131 /* LaunchScreen.storyboard in Resources */,
 				FEA6074A232F5FB000F2E131 /* Assets.xcassets in Resources */,
+				FEA60759232F7E5400F2E131 /* WKWebViewViewController.xib in Resources */,
 				FEA60748232F5FAF00F2E131 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -136,6 +149,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				FEA60745232F5FAF00F2E131 /* ViewController.swift in Sources */,
+				FEA60755232F602E00F2E131 /* AuthViewController.swift in Sources */,
+				FEA60758232F7E5400F2E131 /* WKWebViewViewController.swift in Sources */,
+				FE2AE9DA23334D57001FD864 /* GuideViewController.swift in Sources */,
 				FEA60743232F5FAF00F2E131 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -282,14 +298,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = CustomWebView/Info.plist;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = DTWMHU2QN8;
+				INFOPLIST_FILE = KcbWebAuth/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = kr.co.hsociety.CustomWebView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = hsocietyALL_DEV;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -299,14 +317,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = CustomWebView/Info.plist;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = DTWMHU2QN8;
+				INFOPLIST_FILE = KcbWebAuth/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = kr.co.hsociety.CustomWebView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = hsocietyALL_DEV;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -315,7 +335,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		FEA6073A232F5FAF00F2E131 /* Build configuration list for PBXProject "CustomWebView" */ = {
+		FEA6073A232F5FAF00F2E131 /* Build configuration list for PBXProject "KcbWebAuth" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FEA6074F232F5FB000F2E131 /* Debug */,
@@ -324,7 +344,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		FEA60751232F5FB000F2E131 /* Build configuration list for PBXNativeTarget "CustomWebView" */ = {
+		FEA60751232F5FB000F2E131 /* Build configuration list for PBXNativeTarget "KcbWebAuth" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FEA60752232F5FB000F2E131 /* Debug */,
