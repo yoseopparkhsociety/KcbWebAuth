@@ -15,6 +15,7 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    // Direct
     @IBAction func modalAction(_ sender: Any) {
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "AuthViewController") as! AuthViewController
         vc.authCheckSuccessCallback = { authModel in
@@ -28,6 +29,8 @@ class ViewController: UIViewController {
         self.present(navi, animated: true, completion: nil)
     }
     
+    
+    // Guide
     @IBAction func pushActionWithGuide(_ sender: Any) {
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "GuideViewController") as! GuideViewController
         vc.authCheckSuccessCallback = { authModel in

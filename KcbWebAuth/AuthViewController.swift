@@ -11,6 +11,8 @@ import WebKit
 
 class AuthViewController: UIViewController {
     
+    
+    @IBOutlet weak var goback: UIButton!
     private var webView: WKWebView!
     private let webUrl = "https://kcb.routedate.com/kcb/popup2"
     private let SCRIPT_MESSAGE_HANDLER = "kcbResult"
@@ -26,6 +28,10 @@ class AuthViewController: UIViewController {
         loadWebview()
     }
     
+    @IBAction func buttonTouched(_ sender: Any) {
+        self.webView.goBack()
+    }
+    
     override func loadView() {
         super.loadView()
     }
@@ -38,35 +44,33 @@ class AuthViewController: UIViewController {
 }
 
 private extension AuthViewController {
+    func isModal() -> Bool {
+        return self.navigationController?.viewControllers.count == 1
+    }
+    
     func initialize() {
-        if let count = self.navigationController?.viewControllers.count {
-            let isEnterByModal = count == 1
-            if isEnterByModal {
-                let rightBarButton = UIBarButtonItem.init(image: UIImage.init(named: "blackClose"), style: .plain, target: self, action: #selector(closeButtonAction))
-                rightBarButton.tintColor = UIColor.black
-                self.navigationItem.rightBarButtonItem = rightBarButton
-                
-                self.navigationItem.leftBarButtonItem = nil
-                self.navigationItem.hidesBackButton = true
-            } else {
-                let leftBarButton = UIBarButtonItem.init(image: UIImage.init(named: "blackBack"), style: .plain, target: self, action: #selector(closeButtonAction))
-                leftBarButton.tintColor = UIColor.black
-                self.navigationItem.leftBarButtonItem = leftBarButton
-            }
+        if isModal() {
+            let rightBarButton = UIBarButtonItem.init(image: UIImage.init(named: "blackClose"), style: .plain, target: self, action: #selector(closeButtonAction))
+            rightBarButton.tintColor = UIColor.black
+            self.navigationItem.rightBarButtonItem = rightBarButton
+            
+            self.navigationItem.leftBarButtonItem = nil
+            self.navigationItem.hidesBackButton = true
+            return
         }
+        
+        let leftBarButton = UIBarButtonItem.init(image: UIImage.init(named: "blackBack"), style: .plain, target: self, action: #selector(closeButtonAction))
+        leftBarButton.tintColor = UIColor.black
+        self.navigationItem.leftBarButtonItem = leftBarButton
     }
     
     @objc func closeButtonAction() {
         backButtonCallback?()
-        if let count = self.navigationController?.viewControllers.count {
-            let isEnterByPush = count > 1
-            if isEnterByPush {
-                self.navigationController?.popViewController(animated: true)
-                return
-            }
+        if isModal() {
+            self.dismiss(animated: true, completion: nil)
+            return
         }
-        
-        self.dismiss(animated: true, completion: nil)
+        self.navigationController?.popViewController(animated: true)
     }
     
     func loadWebview() {
@@ -75,6 +79,9 @@ private extension AuthViewController {
         let config = WKWebViewConfiguration()
         
         // 자바 스크립트 콜백 연결
+        /*
+         https://m.blog.naver.com/PostView.nhn?blogId=banhong&logNo=220563623492&proxyReferer=https%3A%2F%2Fwww.google.com%2F
+         */
         let contentController = WKUserContentController()
         contentController.add(self, name: SCRIPT_MESSAGE_HANDLER)
         config.userContentController = contentController
@@ -83,6 +90,8 @@ private extension AuthViewController {
         webView.uiDelegate = self
         webView.navigationDelegate = self
         self.view.addSubview(webView)
+        
+        self.view.bringSubviewToFront(goback)
         
         // 인디케이터
         indicator = UIActivityIndicatorView.init(style: .gray)
@@ -125,6 +134,17 @@ extension AuthViewController: WKNavigationDelegate, WKUIDelegate, WKScriptMessag
     func webView(_ webView: WKWebView, runJavaScriptAlertPanelWithMessage message: String, initiatedByFrame frame: WKFrameInfo, completionHandler: @escaping () -> Void) {
         let alertController = UIAlertController(title: "", message: message, preferredStyle: .alert)
         alertController.addAction( UIAlertAction.init(title: "확인", style: .default, handler: nil) )
+        self.present(alertController, animated: true, completion: { completionHandler() })
+    }
+    
+    func webView(_ webView: WKWebView, runJavaScriptConfirmPanelWithMessage message: String, initiatedByFrame frame: WKFrameInfo, completionHandler: @escaping (Bool) -> Void) {
+        let alertController = UIAlertController(title: "", message: message, preferredStyle: .alert)
+        alertController.addAction(UIAlertAction.init(title: "확인", style: .default, handler: { _ in completionHandler(true)
+            self.closeButtonAction()
+        }))
+        alertController.addAction(UIAlertAction.init(title: "취소", style: .default, handler: { _ in
+            completionHandler(false)
+        }))
         self.present(alertController, animated: true, completion: nil)
     }
     
@@ -147,6 +167,10 @@ extension AuthViewController: WKNavigationDelegate, WKUIDelegate, WKScriptMessag
      새로운 웹뷰로 url을 띄워준다.
      */
     func webView(_ webView: WKWebView, createWebViewWith configuration: WKWebViewConfiguration, for navigationAction: WKNavigationAction, windowFeatures: WKWindowFeatures) -> WKWebView? {
+        
+        if navigationAction.targetFrame == nil {
+            self.webView.load(navigationAction.request)
+        }
         
         if let surl = navigationAction.request.url?.absoluteString {
             print("웹뷰 새창으로 이동 [\(surl)]")
@@ -178,6 +202,15 @@ class AuthModel: NSObject {
     var telCo: String = "" //01
     var mbNo: String = "" //01089997677
     var ci: String = "" //ickEbutKH/fsADJv65R4QyP4iswUT4uk3BI+ISuB+lLJKcZ9c9vud1+dcZY48AW1IUPr5UAaxExnnUDvXY3ulg==
+    
+//    var userAge: Int {
+//        let birthStr = self.birthday
+//        let index = birthStr.index(birthStr.startIndex, offsetBy: 4)
+//        let yearStr = birthStr[..<index]
+//        let userBirthYear = Int(yearStr)!
+//        let age = (Date().year() - userBirthYear) + 1
+//        return age
+//    }
     
     convenience init?(messageBody: Any) {
         if let bodyStr = messageBody as? String, let data = bodyStr.data(using: .utf8) {

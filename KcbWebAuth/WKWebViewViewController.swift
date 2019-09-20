@@ -129,17 +129,17 @@ extension WKWebViewViewController: WKNavigationDelegate, WKUIDelegate, WKScriptM
      */
     func webView(_ webView: WKWebView, createWebViewWith configuration: WKWebViewConfiguration, for navigationAction: WKNavigationAction, windowFeatures: WKWindowFeatures) -> WKWebView? {
         if let surl = navigationAction.request.url?.absoluteString {
-            print("웹뷰 새창으로 이동 [\(surl)]")
-            if surl.contains("itunes.apple.com") {
-                if let url = URL(string: surl) {
-                    if #available(iOS 10.0, *) {
-                        UIApplication.shared.open(url, options: [:])
-                    } else {
-                        // Fallback on earlier versions
-                    }
-                }
-                return nil
-            }
+//            print("웹뷰 새창으로 이동 [\(surl)]")
+//            if surl.contains("itunes.apple.com") {
+//                if let url = URL(string: surl) {
+//                    if #available(iOS 10.0, *) {
+//                        UIApplication.shared.open(url, options: [:])
+//                    } else {
+//                        // Fallback on earlier versions
+//                    }
+//                }
+//                return nil
+//            }
             
             let web = WKWebViewViewController(nibName: "WKWebViewViewController", bundle: nil)
             web.webUrl = surl
